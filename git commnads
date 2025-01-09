@@ -1,0 +1,54 @@
+git status --> to check status in git 
+git init --> to initialize a git repo (make sure you are in the directory which you want to initialize )
+git add <file name> --> to add file to staging area.
+for you to commit a change git has to know who you are for that you have to use git config user.name <name> and  git config user.email <emailid>.
+git commit --> is used to commit file it opens atext editor there add a message (this is used to identify differnces in commits and who commited  it)
+a commit stores a copy of a file in its cyrrent state within .git folder.
+git restore <file name> --> to restore previous version of a file if changes are made to that file .
+git commit -m "update" --> to commit using a message this way we can avoid going into text editor typing message and exiting from it.
+In git a copy of file is stored as soon as it enters staging area if you want to restore a file from this stage u can use below command.
+git restore <file name> --> it will restore file to state that it was in when we last staged it.
+for example if we want to we have two files one file is already in staging and now you want the other file to move to be satged and commited first before we commit file1  then you have to use 
+git restore --staged <file name> to unstage file1 and then git add file2 and git commit file2 
+git rm <file name> -- cached --> it will retain in our directory it will just remove file from staging area 
+git rm <file name> -f --> it will remove file permanently from directory.
+echo "file name" >> .gitignore --> this make sure that the file is made unavalable for git so that it can not be commited to complety ignore this file permanently .
+git log --> to shows information about all commits
+git log --oneline --> if you want to see information in oneline with less info
+git log --name-only --> to show names of files as well in commits to which changes are made.
+In git you cannot perform all changes to code in production (master branch) directly so we create another branch as per your job update code into that branch first then test it and if it works fine then we merge it with master.
+git branch branch name --> to create new branch.
+git checkout -b branch name --> to create new branch and switch to that branch.
+git branch --> to check no of branches and which branch we are corrently in.
+git checkout branch name --> to check out to that branch
+git branch -d branch name --> to delete the branch  
+If you want to merge a branch to master branch first make sure you are in master branck i.e checkout out to master or what ever branch you want to merge 
+to 
+git merge branch name --> to merge the branch .
+there are two types of merge that git can perform fastforward and no fastforward merge .a fast forward merge happens only when current branch has no extra commits compared to branch we are merging. a no fast forward comes into play when current branch has more extra commits compared to branch we are merging with this no fast forward merge git creates new merging commit on active branch the commits parent commit to both the active branch and the branch that we want to merge 
+
+Initialize remote repository to add git to remote repository you can use below command
+git remote add origin git url --> to set the github as its origin 
+git remote -v --> to list all your remote repositories
+In order to keep our local repo and remote repo in sinck we have to push to remote repo 
+git push origin master --> to push data from local to remote repository
+                  | _> branch you are in or default branch
+git clone giturl --> if you want to clone all data in remote repository to local repository
+git fetch origin master --> to fetch changes to local origin/master as it is fetched now we can update our local master to point to changes made in origin master . to do that u can use below command
+git merge origin/master 
+git pull origin master --> instead of doing above two tasks fetching and merging invidually it does this together.
+git rebase <branch>: Rebase your current branch on top of <branch>.
+git rebase -i <branch>: Interactive rebase, allowing you to edit, squash, or reorder commits.
+Caution: Rebasing rewrites commit history, so avoid rebasing shared branches.
+git rebase master --> if you want to rebase 
+git rebase -i HEAD~3 --> to squash the last 3 commits into 1 
+git cherry-pick hashofcommit --> to cheerypick a commit from ane branch to another.
+git revert <commit hash> --> to revert that commit
+git reset --soft Head~1 --> to reset the commit but still want to keep changes made.
+git reset --hard Head~1 --> to remove all changes made to that commit .
+git stash --> to stash from working area to stash
+git stash pop --> we want to get stash to working area 
+git stash list --> to list stash of files 
+git stash show stashname --> to see contents of a stash
+
+git reflog --> if you perform reset hard all data will be gone this gives all data then we can use reset hard again to reset it to previous state
