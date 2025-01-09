@@ -1,0 +1,10 @@
+git push 
+
+git add *   
+git commit -m "commit"
+git remote add origin main https://github.com/avadaequare/application-demo.git
+git push origin main
+
+git token --> settings -->developer settings --> generate token
+
+32578572-94e3-4944-b87a-802fc99e1172
