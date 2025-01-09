@@ -1,0 +1,20 @@
+To merge the changes from the master branch into the main branch, follow these steps:
+
+1. Switch to the main Branch
+If the main branch doesn't exist yet, create it and switch to it:
+
+git checkout -b main
+If the main branch already exists, simply switch to it:
+
+git checkout main
+2. Merge master into main
+Run the following command to merge changes from master into main:
+
+
+git merge master
+This will integrate all the changes from master into the main branch. If there are conflicts, resolve them manually, then stage and commit the resolved files.
+
+3. Push the main Branch to Remote
+After merging, push the main branch to the remote repository:
+
+git push -u origin main
