@@ -10,4 +10,7 @@ Select:
 ✅ repo (Full control of repositories).
 ✅ workflow (For GitHub Actions, if needed).
 
+To permanently set it git remote set-url origin https://<your-token>@github.com/avadaequare/ATMJAvaapplication.git
+
+
 32578572-94e3-4944-b87a-802fc99e1172
